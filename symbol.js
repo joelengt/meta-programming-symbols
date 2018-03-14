@@ -19,6 +19,7 @@ class IterarSaltando {
     }
   }
 }
+
 var iterarSaltando = new IterarSaltando();
 iterarSaltando[0] = '1';
 iterarSaltando[1] = '2';
@@ -27,4 +28,6 @@ for(var value of iterarSaltando) {
     console.log(value); // 1, luego 3
 }
 
+// Array
+const iia = [...Array(3)]
 

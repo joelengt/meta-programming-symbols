@@ -29,5 +29,5 @@ for(var value of iterarSaltando) {
 }
 
 // Array
-const iia = [...Array(3)]
+const iia = [...Array(5)]
 

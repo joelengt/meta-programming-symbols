@@ -63,4 +63,8 @@ text.indexOf('p') // 3
 text.search('p') // 3
 
 
+// jquery
+$('.block .sample.box').find('span.padr>img').attr('src') 
+
+
 

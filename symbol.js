@@ -57,3 +57,10 @@ tag`Hola ${ a + b } mundo ${ a * b}`;
 // "Bazinga!"
 
 
+// search a element inside a string
+const text = 'sample' 
+text.indexOf('p') // 3
+text.search('p') // 3
+
+
+

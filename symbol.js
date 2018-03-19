@@ -31,6 +31,9 @@ for(var value of iterarSaltando) {
 
 // Array
 const iia = [...Array(5)]
+const arr = [1, 2, 3, 4]
+Array.isArray(arr) // true
+Array.for('sample') // ['s', 'a', 'm','p', 'l', 'e']
 
 // String
 var a = 5;
@@ -47,4 +50,5 @@ function tag(strings, ...values) {
 
 tag`Hola ${ a + b } mundo ${ a * b}`;
 // "Bazinga!"
+
 

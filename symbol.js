@@ -35,6 +35,11 @@ const arr = [1, 2, 3, 4]
 Array.isArray(arr) // true
 Array.for('sample') // ['s', 'a', 'm','p', 'l', 'e']
 
+// Object
+const ob = { name: 'dasd', age:19, lastName: 'fuldata date', info: 'sample delivery' }
+Object.keys(ob) // ["name", "age", "lastName", "info"]
+Object.keys(ob).sort() // ["age", "info", "lastName", "name"]
+
 // String
 var a = 5;
 var b = 10;

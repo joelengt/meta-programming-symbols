@@ -40,6 +40,10 @@ const ob = { name: 'dasd', age:19, lastName: 'fuldata date', info: 'sample deliv
 Object.keys(ob) // ["name", "age", "lastName", "info"]
 Object.keys(ob).sort() // ["age", "info", "lastName", "name"]
 
+const ob = { name: 'dasd', age: 20 }
+'age' in ob // true
+'lastname' in ob // false
+ 
 // String
 var a = 5;
 var b = 10;

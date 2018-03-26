@@ -69,4 +69,3 @@ text.search('p') // 3
 
 // jquery
 $('.block .sample.box').find('span.padr>img.a').attr('src') 
-

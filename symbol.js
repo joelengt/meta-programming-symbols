@@ -303,3 +303,19 @@ import * as calc from './archivo.js';
 // desde Combinandolos
 import calc from './archivo.js';
 import { sumar } from './archivo.js';
+
+
+
+
+
+>> bind vs apply vs call
+//How about call and apply?
+// magicMultiplication.bind(this)
+
+magicMultiplication.call(this,3,2); //6
+magicMultiplication.apply(this,[5,2]); //10
+
+/**
+* In simple words, bind creates the function,
+* call and apply executes the function whereas apply expects the parameters in array
+*/

@@ -167,6 +167,34 @@ console.log(values.next());
 console.log(values.next());
 console.log(values.next());
 
+
+// WeakMap
+let wMap = new WeakMap();
+
+let obj = { first: 'value' }
+
+wMap.set(obj, 'mundo');
+
+console.log(wMap.get(obj));
+
+if (wMap.has(obj)) {
+  wMap.delete(obj);
+
+  console.log(wMap.get(obj));
+}
+
+// WeakSet
+let wSet = new WeakSet();
+
+let obj = { first: 'value' };
+
+wSet.add(obj);
+
+if (wSet.has(obj)) {
+  wSet.delete(obj);
+}
+
+
 // Proxy
 let Jose = {
   nombre: 'Don Jose'

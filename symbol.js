@@ -98,6 +98,16 @@ const app = Object.freeze({
 app.init();
 
 // Function Bind Operator
+// sample 1
+this.func.bind(this) 
+
+// vs
+
+::this.fun;
+::this.fun(1, 'sample');
+
+
+// sample 2
 const map    = Array.prototype.map;
 const filter = Array.prototype.filter;
 function mostrar() { console.log(this); return this; }

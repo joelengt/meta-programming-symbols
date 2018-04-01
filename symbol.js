@@ -1,4 +1,4 @@
-// Symbol('nombre')
+// Symbol('nombre') - as a private prop
 const nombre  = Symbol('nombre');
 
 const persona = {
@@ -8,6 +8,18 @@ const persona = {
 
 console.log(persona.nombre); // permite el acceso al nombre de persona
 persona.nombre = 'Jose'; // da error al querer cambiarlo
+
+
+// Symbol.for('nombre');
+Symbol.for('nombre'); // crea un nuevo símbolo
+
+let persona = {};
+
+// usa el symbolo 'nombre' para identificar a una propiedad de persona
+persona[Symbol.for('nombre')] = 'Jose';
+
+console.log(persona);
+console.log(persona[Symbol.for('nombre')])
 
 
 // Symbol.hasInstance: instanceof

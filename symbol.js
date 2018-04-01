@@ -86,6 +86,24 @@ const text = 'sample'
 text.indexOf('p') // 3
 text.search('p') // 3
 
+// Map
+
+let map = new Map();
+let persona;
+
+map.set('sample', 'sas')
+map.set('age', 20)
+map.set('persona', { nombre: 'Jose' }); // guardamos el valor
+
+// comprobamos que exista dentro de nuestro map
+if (map.has('persona')) {
+  persona = map.get('persona'); // lo obtenemos
+}
+
+map.delete('persona'); // borramos 'persona' y el valor asociado
+
+console.log(persona);
+console.log(map.get('persona'));
 
 // jquery
 $('.block .sample.box').find('span.padr>img.a').attr('src') 

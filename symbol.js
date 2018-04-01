@@ -82,6 +82,60 @@ Object.values(ob) // ["dasd", "19", "dsad", "sample delivery"]
 Object.entries(ob) // [["name", "dasd"], ["age", "19"], ["lastName", "fuldata date"], ["info", "sample delivery"]]
 
 
+const app = Object.freeze({
+  init: async function init () {
+    try {
+      const data1 = await getData(); // hola
+      const data2 = `${data1} mundo`;
+
+      console.log(data2);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+});
+
+app.init();
+
+// function bind
+const map    = Array.prototype.map;
+const filter = Array.prototype.filter;
+function mostrar() { console.log(this); return this; }
+function agregar(numeros) {
+  for (let numero of numeros) {
+    this.push(numero);
+  }
+  return this;
+}
+
+const data = [1,2,3];
+
+data
+::mostrar()
+::filter(x => x % 2 !== 0)
+::mostrar()
+::map(x => ++x)
+::mostrar()
+::agregar(data)
+::mostrar();
+
+
+
+
+// Object Observe
+let persona = {
+  nombre: 'Jose'
+};
+
+Object.observe(persona, changes => {
+  changes.forEach(change => console.log(change));
+});
+
+persona.nombre = 'Pepito';
+persona.honorifico = 'Don';
+delete persona.nombre;
+
+
 const ob = { name: 'dasd', age: 20 }
 'age' in ob // true
 'lastname' in ob // false

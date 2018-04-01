@@ -40,6 +40,10 @@ const ob = { name: 'dasd', age:19, lastName: 'fuldata date', info: 'sample deliv
 Object.keys(ob) // ["name", "age", "lastName", "info"]
 Object.keys(ob).sort() // ["age", "info", "lastName", "name"]
 
+Object.values(ob) // ["dasd", "19", "dsad", "sample delivery"]
+Object.entries(ob) // [["name", "dasd"], ["age", "19"], ["lastName", "fuldata date"], ["info", "sample delivery"]]
+
+
 const ob = { name: 'dasd', age: 20 }
 'age' in ob // true
 'lastname' in ob // false
@@ -60,6 +64,9 @@ function tag(strings, ...values) {
 tag`Hola ${ a + b } mundo ${ a * b}`;
 // "Bazinga!"
 
+const text = "sample way to write";
+const result = text.match(/wa/ig) // ["wa"]
+if (!result.length) throw Error("it's empty")
 
 // search a element inside a string
 const text = 'sample' 

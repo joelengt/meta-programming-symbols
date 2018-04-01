@@ -68,6 +68,19 @@ const text = "sample way to write";
 const result = text.match(/wa/ig) // ["wa"]
 if (!result.length) throw Error("it's empty")
 
+
+// formt HTTP sample
+function formatHTTP({ url, method = "GET", headers, body }) {
+  const { path, host } = parseURL(url);
+
+  return [
+    `${method} ${path} HTTP/1.1`,
+    `Host: ${host}`,
+    ...Object.entries(headers).map(([key, value]) => `${key}: ${value}`),
+    JSON.stringify(body, null, 2)
+  ].join("\n");
+}
+
 // search a element inside a string
 const text = 'sample' 
 text.indexOf('p') // 3

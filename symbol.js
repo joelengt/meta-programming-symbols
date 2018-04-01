@@ -87,7 +87,6 @@ text.indexOf('p') // 3
 text.search('p') // 3
 
 // Map
-
 let map = new Map();
 let persona;
 
@@ -105,5 +104,58 @@ map.delete('persona'); // borramos 'persona' y el valor asociado
 console.log(persona);
 console.log(map.get('persona'));
 
+
+// Proxy
+let Jose = {
+  nombre: 'Don Jose'
+};
+
+let proxy = new Proxy(Jose, {
+  get(target, propiedad) {
+    let mensaje = `obteniendo ${propiedad}:
+${target[propiedad]}`;
+    console.log(mensaje);
+  }
+});
+
+proxy.nombre;
+
 // jquery
 $('.block .sample.box').find('span.padr>img.a').attr('src') 
+
+
+
+
+// System.import vs import
+
+/// >> system.import (async)
+// Cargando un solo módulo
+System.import('modulo')
+  .then(modulo => {
+    // código
+  })
+  .catch(error => {
+    // código
+  });
+
+// Cargando múltiples módulos
+Promise
+  .all(['modulo1', 'modulo2', 'modulo3'].map(x => System.import(x)))
+  .then(([modulo1, modulo2, modulo3]) => {
+    // código
+  })
+  .catch(error => {
+    // código
+  });
+
+
+/// >> import (sync)
+// desde Exportación única
+import Persona from './archivo.js';
+
+// desde Multiples exportaciones
+import * as calc from './archivo.js';
+
+// desde Combinandolos
+import calc from './archivo.js';
+import { sumar } from './archivo.js';

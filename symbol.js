@@ -97,7 +97,7 @@ const app = Object.freeze({
 
 app.init();
 
-// function bind
+// Function Bind Operator
 const map    = Array.prototype.map;
 const filter = Array.prototype.filter;
 function mostrar() { console.log(this); return this; }

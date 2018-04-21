@@ -216,7 +216,7 @@ map.delete('persona'); // borramos 'persona' y el valor asociado
 console.log(persona);
 console.log(map.get('persona'));
 
-// Set
+// Set 
 let persona = { nombre: 'Pepito' };
 
 let set = new Set([1, 'foo', 3.14, persona]);

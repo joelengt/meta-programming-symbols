@@ -340,3 +340,4 @@ magicMultiplication.apply(this,[5,2]); //10
 * call and apply executes the function whereas apply expects the parameters in array
 */
 
+

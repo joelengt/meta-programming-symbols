@@ -341,3 +341,5 @@ magicMultiplication.apply(this,[5,2]); //10
 */
 
 
+
+

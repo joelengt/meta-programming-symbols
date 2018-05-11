@@ -5,7 +5,7 @@ const honorifico = Symbol();
 let persona = {
   [nombre]: 'Pepito',
   [honorifico]: 'Don'
-};
+}; 
  
 console.log(persona);
 console.log(persona[nombre]);

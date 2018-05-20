@@ -5,30 +5,28 @@ const honorifico = Symbol()
 let persona = {
   [nombre]: 'Pepito',
   [honorifico]: 'Don'
-}; 
+}
  
-console.log(persona);
-console.log(persona[nombre]);
-console.log(persona[honorifico]);
-
-
+console.log(persona)
+console.log(persona[nombre])
+console.log(persona[honorifico])
 
 // Symbol('nombre') - as a private prop
-const nombre  = Symbol('nombre');
+const nombre  = Symbol('nombre')
 
 const persona = {
   [nombre]: 'Pepito',
   get nombre() { return persona[nombre] }
-};
+}
 
 console.log(persona.nombre); // permite el acceso al nombre de persona
 persona.nombre = 'Jose'; // da error al querer cambiarlo
 
 
-// Symbol.for('nombre');
-Symbol.for('nombre'); // crea un nuevo símbolo
+// Symbol.for('nombre')
+Symbol.for('nombre') // crea un nuevo símbolo
 
-let persona = {};
+let persona = {}
 
 // usa el symbolo 'nombre' para identificar a una propiedad de persona
 persona[Symbol.for('nombre')] = 'Jose';
@@ -44,7 +42,7 @@ class MiArray {
         return Array.isArray(otro);
     }
 }
-assert([] instanceof MiArray); // pasa, por evaluarse como true
+assert([] instanceof MiArray) // pasa, por evaluarse como true
 
 
 // Symbol.iterator

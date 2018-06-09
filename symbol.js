@@ -337,5 +337,3 @@ magicMultiplication.apply(this,[5,2]); //10
 * In simple words, bind creates the function,
 * call and apply executes the function whereas apply expects the parameters in array
 */
-
-

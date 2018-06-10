@@ -93,7 +93,22 @@ const app = Object.freeze({
   }
 });
 
+async const initProcess = () => {
+  try {
+    const data1 = await fetch('https://github.com/joelengt')
+      .then(result => result.status)
+    
+    const data2 = `${data1} mundo`;
+
+    console.log(data2); 
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 app.init();
+
+initProcess()
 
 // Function Bind Operator
 // sample 1

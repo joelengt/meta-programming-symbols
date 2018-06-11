@@ -212,6 +212,11 @@ text.indexOf('p') // 3
 text.search('p') // 3
 
 // Map
+
+// An Object has a prototype, so there are default keys in the map.
+// The keys of an Object are Strings, where they can be any value for a Map.
+// You can get the size of a Map easily while you have to keep track of size for an Object.
+
 let map = new Map();
 let persona;
 
@@ -228,6 +233,26 @@ map.delete('persona'); // borramos 'persona' y el valor asociado
 
 console.log(persona);
 console.log(map.get('persona'));
+
+
+// another example
+var myMap = new Map();
+
+var keyObj = {},
+    keyFunc = function () {},
+    keyString = "a string";
+
+myMap.set(keyString, "value associated with 'a string'");
+myMap.set(keyObj, "value associated with keyObj");
+myMap.set(keyFunc, "value associated with keyFunc");
+
+myMap.size; // 3
+
+myMap.get(keyString);    // "value associated with 'a string'"
+myMap.get(keyObj);       // "value associated with keyObj"
+myMap.get(keyFunc);      // "value associated with keyFunc"
+
+
 
 // Set 
 let persona = { nombre: 'Pepito' };

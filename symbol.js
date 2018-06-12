@@ -377,3 +377,149 @@ magicMultiplication.apply(this,[5,2]); //10
 * In simple words, bind creates the function,
 * call and apply executes the function whereas apply expects the parameters in array
 */
+
+
+/**
+* recursion samples
+*/
+
+const getFactorialNormal = (number = 1) => {
+  let result = 1
+  for(let i = 1; i <= number; i++) result = i * result
+  return result
+}
+
+// factorial recursion 1
+function getFactorial(number = 1) {
+  if(number < 1) return 1
+  return number * getFactorial(number - 1)
+}
+
+// factorial recursion 2
+const getFactorial2 = (number = 1) => {
+  if(number < 1) return 1
+  return number * getFactorial2(number - 1)
+}
+
+// get fibonacci
+const fibonacci = (number = 1) => {
+  if(number >= 3) return fibonacci(number - 1) + fibonacci(number - 2)
+  return 1
+}
+
+/**
+* easy arrays play
+*/
+
+// parse data
+const base = [
+  {
+    id: 1,
+    name: "sample1",
+    price: "21.00",
+    items: [
+      {
+        id: 1,
+        title: "main title x1",
+        tags: ["girl", "cat", "baby"]
+      },
+      {
+        id: 2,
+        title: "main title x1",
+        tags: ["audio", "novel", "man"]
+      },
+      {
+        id: 3,
+        title: "main title x1",
+        tags: ["duck", "chicken", "blabla"]
+      }
+    ]
+  },
+  {
+    id: 2,
+    name: "sample2",
+    price: "11.00",
+    items: [
+      {
+        id: 1,
+        title: "the girl comming out x1",
+        tags: ["woman", "horse", "house"]
+      },
+      {
+        id: 2,
+        title: "the girl comming out x1",
+        tags: ["pet", "dummy", "raise"]
+      },
+      {
+        id: 3,
+        title: "the girl comming out x1",
+        tags: ["help", "brind", "bought"]
+      }
+    ]
+  },
+  {
+    id: 3,
+    name: "sample3",
+    price: "2.00",
+    items: [
+      {
+        id: 1,
+        title: "following the way x1",
+        tags: ["buy", "saw", "drank"]
+      },
+      {
+        id: 2,
+        title: "following the way x1",
+        tags: ["drink", "drunk", "ding"]
+      },
+      {
+        id: 3,
+        title: "following the way x1",
+        tags: ["dong", "dear", "nah"]
+      }
+    ]
+  },
+  {
+    id: 4,
+    name: "sample4",
+    price: "88.00",
+    items: [
+      {
+        id: 1,
+        title: "funny way x1",
+        tags: ["hey", "him", "away"]
+      },
+      {
+        id: 2,
+        title: "funny way x1",
+        tags: ["from", "for", "yelling"]
+      },
+      {
+        id: 3,
+        title: "funny way x1",
+        tags: ["making", "take", "put"]
+      }
+    ]
+  }
+];
+
+// get Names
+const getNames = (arrayList = []) => 
+  arrayList.map(({ name }) => name)
+
+// get items in one single array
+const getItems = (arrayList = []) => [].concat(
+  ...arrayList.map(({ items }) => items))
+
+const searchOnList = (arrayList = [], search, tag) => {
+  // find on array list
+  let picked = arrayList.find(({ name }) => name === search)
+
+  if(!picked) return null
+
+  return [].concat(...picked.items.map(({ tags }) => tags))
+}
+
+const getTitles = (arrayList = []) => [].concat(
+  ...arrayList.map(({ items }) => items.map(({ title }) => title)))
+

@@ -362,9 +362,13 @@ import * as calc from './archivo.js';
 import calc from './archivo.js';
 import { sumar } from './archivo.js';
 
-
-
-
+/* block scope */
+{
+  let a = 1;
+  const b = 1;
+  console.log(a)
+}
+console.log(a)
 
 >> bind vs apply vs call
 //How about call and apply?

@@ -211,7 +211,7 @@ const text = 'sample'
 text.indexOf('p') // 3
 text.search('p') // 3
 
-// Map
+// Map (HashMap, HashTable)
 
 // An Object has a prototype, so there are default keys in the map.
 // The keys of an Object are Strings, where they can be any value for a Map.
@@ -372,6 +372,15 @@ import { sumar } from './archivo.js';
 
 magicMultiplication.call(this,3,2); //6
 magicMultiplication.apply(this,[5,2]); //10
+
+
+// Enums on javascript
+var DaysEnum = Object.freeze({"monday":1, "tuesday":2, "wednesday":3, ...})
+
+// or
+var DaysEnum = {"monday":1, "tuesday":2, "wednesday":3, ...}
+Object.freeze(DaysEnum)
+     
 
 /**
 * In simple words, bind creates the function,

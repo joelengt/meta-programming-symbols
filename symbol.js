@@ -1,5 +1,5 @@
 // symbols
-const nombre = Symbol('nombre')
+const nombre = Symbol('name')
 const honorifico = Symbol()
 
 let persona = {

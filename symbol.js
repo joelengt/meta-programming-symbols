@@ -1,5 +1,6 @@
 // symbols
-const nombre = Symbol('name')
+const nombre = Symbol('nombre')
+const game = Symbol('game')
 const honorifico = Symbol()
 
 let persona = {

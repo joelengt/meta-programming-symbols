@@ -537,3 +537,28 @@ const searchOnList = (arrayList = [], search, tag) => {
 const getTitles = (arrayList = []) => [].concat(
   ...arrayList.map(({ items }) => items.map(({ title }) => title)))
 
+
+// console samples
+// 1.- console.log with colors
+console.log('%c hola', 'color: orange')
+
+// 2.- console.table
+const arr1 = [ { name: 'joel', age: 20}, { name: 'joel2', age: 22 }  ]
+console.table(arr11)
+
+
+// 3.- console.time - console.time
+console.time('looper')
+
+let i = 0
+while(i < 100) i++
+
+console.timeEnd('looper')
+
+
+
+4.- Stack trace logs
+
+const deteleMe = () => console.trace('a sample of code')
+
+

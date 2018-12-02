@@ -562,3 +562,132 @@ console.timeEnd('looper')
 const deteleMe = () => console.trace('a sample of code')
 
 
+
+
+function* initializeGenerator() {
+  const array = [1, 2, 3]
+
+  for(let arrayItem of array) {
+    yield arrayItem
+  }
+}
+
+
+for(let item of initializeGenerator()) {
+  console.log('>>' + item)
+}
+
+
+
+function* fibonacci() { // una función generador
+  let [prev, curr] = [0, 1];
+  while (true) {
+    [prev, curr] = [curr, prev + curr];
+    yield curr;
+  }
+}
+
+
+for (let n of fibonacci()) {
+  console.log(n);
+  // interrumpir la secuencia en 1000
+  if (n >= 150000) {
+    break;
+  }
+}
+
+// iterators
+var arr = [1,2]
+typeof arr[Symbol.iterator]()
+
+var iterator = arr[Symbol.iterator]().next()
+console.log(iterator.next()) // 1
+console.log(iterator.next()) // 2
+
+
+// Iterables personalizados, generators
+
+var myIterable = {};
+myIterable[Symbol.iterator] = function* () {
+    yield 1;
+    yield 2;
+    yield 3;
+};
+
+[...myIterable]; // [1, 2, 3]
+
+
+// yield* => es usada para delegar a otro generator u objeto iterable. 
+function* g1() {
+  yield 2;
+  yield 3;
+  yield 4;
+}
+
+function* g2() {
+  yield 1;
+  yield* g1();
+  yield 5;
+}
+
+var iterator = g2();
+
+console.log(iterator.next()); // { value: 1, done: false }
+console.log(iterator.next()); // { value: 2, done: false }
+console.log(iterator.next()); // { value: 3, done: false }
+console.log(iterator.next()); // { value: 4, done: false }
+console.log(iterator.next()); // { value: 5, done: false }
+console.log(iterator.next()); // { value: undefined, done: true }
+
+
+function* g3() {
+  yield* [1, 2];
+  yield* "34";
+  yield* Array.from(arguments);
+}
+
+var iterator = g3(5, 6);
+
+console.log(iterator.next()); // { value: 1, done: false }
+console.log(iterator.next()); // { value: 2, done: false }
+console.log(iterator.next()); // { value: "3", done: false }
+console.log(iterator.next()); // { value: "4", done: false }
+console.log(iterator.next()); // { value: 5, done: false }
+console.log(iterator.next()); // { value: 6, done: false }
+console.log(iterator.next()); // { value: undefined, done: true }
+
+
+
+function* fibonacci() {
+  var a = yield 1;
+  yield a * 2;
+}
+
+var it = fibonacci();
+console.log(it);          // "Generator {  }"
+console.log(it.next());   // 1
+console.log(it.send(10)); // 20
+console.log(it.close());  // undefined
+console.log(it.next());   // throws StopIteration (as the generator is now closed)
+
+
+function* anotherGenerator(i) {
+  yield i + 1;
+  yield i + 2;
+  yield i + 3;
+}
+
+function* generator(i){
+  yield i;
+  yield* anotherGenerator(i);
+  yield i + 10;
+}
+
+var gen = generator(10);
+
+console.log(gen.next().value); // 10
+console.log(gen.next().value); // 11
+console.log(gen.next().value); // 12
+console.log(gen.next().value); // 13
+console.log(gen.next().value); // 20
+

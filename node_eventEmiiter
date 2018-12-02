@@ -1,0 +1,65 @@
+/// NODEJS
+//> EventEmiiter
+var EventEmiiter = require('events')
+var Utils = require('util')
+
+var Arreglo = function() {
+  this.data = []
+}
+
+Utils.inherits(Arreglo, EventEmiiter)
+
+Arreglo.prototype.add = function (valor) {
+  this.data.push(valor)
+  this.emit('add', valor)
+}
+
+var arr1 = new Arreglo()
+
+arr1.on('add', (value) => console.log('A new value added: ', value))
+
+arr1.add(123)
+arr1.add("hola!!")
+arr1.add("Mundo!!")
+
+// --
+
+var EventEmiiter = require('events')
+var Utils = require('util')
+
+class Arreglo {
+  constructor() {
+    this.data = []
+  }
+
+  add(valor) {
+    this.data.push(valor)
+    this.emit('add', valor)
+  }
+}
+
+Utils.inherits(Arreglo, EventEmiiter)
+
+var arr1 = new Arreglo()
+
+arr1.on('add', (value) => console.log('A new value added: ', value))
+
+arr1.add(123)
+arr1.add("hola!!")
+arr1.add("Mundo!!")
+
+
+
+
+//> events on server
+// index.js
+var http = require('http')
+var server = http.createServer()
+
+server.on("request", function(request, response) {
+  response.writeHead(200, { 'Content-Type': 'application/json' })
+  response.write('{"valor": "10"}')
+  response.end()
+})
+
+server.listen(4000)
